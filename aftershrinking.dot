@@ -1,0 +1,14 @@
+digraph proguard_state_machine {
+	rankdir=TB;
+	size="8,5"
+  LoginActivity -> UserManager;
+  UserManager -> UserApi;
+  FeedActivity -> FeedApi;
+  
+  node [ style="filled", fillcolor = "black" ] OldUserManager;
+  node [ style="filled", fillcolor = "black" ] OldUserApi;
+  
+  OldUserManager -> OldUserApi;
+  {rank=same LoginActivity FeedActivity}
+  {rank=same UserManager OldUserManager}
+}

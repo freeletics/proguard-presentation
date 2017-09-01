@@ -1,0 +1,12 @@
+digraph proguard_state_machine {
+	rankdir=LR;
+	size="8,5"
+	node [shape = doublecircle, fontsize=30]; start end;
+	node [shape = circle, fontsize=30];
+  start -> shrink;
+  shrink -> optimize;
+  optimize -> shrink;
+  optimize -> obfuscate;
+  obfuscate -> preverify;
+  preverify -> end
+}
